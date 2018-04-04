@@ -1,5 +1,6 @@
 package com.gyr.widget;
 
+
 import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
@@ -42,8 +43,9 @@ public class BottomTab extends LinearLayout {
     public BottomTab createTabItem(String[] texts, int[] drawables, @LayoutRes int layoutResID, int normalSelectItemPosition) {
         int length = texts.length;
         for (int i = 0; i < length; i++) {
-            ViewGroup tabItem = (ViewGroup) inflate(context, layoutResID, this);
+            BottomTab viewGroup = (BottomTab) inflate(context, layoutResID, this);
 
+            ViewGroup tabItem = (ViewGroup) viewGroup.getChildAt(i);
             ImageView imageView = (ImageView) tabItem.getChildAt(0);
             TextView textView = (TextView) tabItem.getChildAt(1);
 
@@ -58,6 +60,7 @@ public class BottomTab extends LinearLayout {
                 selectItem = tabItem;
                 selectItem.setSelected(true);
             }
+
         }
 
         return this;
@@ -91,3 +94,4 @@ public class BottomTab extends LinearLayout {
     }
 
 }
+
