@@ -1,6 +1,15 @@
 # BottomTab
 底部导航
 
+            <com.gyr.widget.BottomTab
+        android:background="#999"
+        android:orientation="horizontal"
+        android:id="@+id/bottomTab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+
+
         BottomTab bottomTab = (BottomTab) findViewById(R.id.bottomTab);
         String[] texts = {"首页", "项目列表", "搜索", "用户中心"};
         int[] drawables = {R.drawable.bottom_home, R.drawable.bottom_news, R.drawable.bottom_repository, R.drawable.bottom_user};
